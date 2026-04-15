@@ -4,9 +4,9 @@
 
 - 选题类型：新品速递
 - 来源分区：new_arrivals
-- 标题原文：ワッペンティッシュケース☆いちごちゃん/いちご x プチドット
-- 来源链接：https://curlycollection.jp/shop/products/detail/85759
-- 选择原因：选择了 new_arrivals 区的第 3 项：图片可用、标题可读，综合得分 111。
+- 标题原文：ワッペンティッシュケース☆いちごちゃん(モノクロ)/ドット x フラワーチェック
+- 来源链接：https://curlycollection.jp/shop/products/detail/85748
+- 选择原因：选择了 new_arrivals 区的第 7 项：图片可用、标题可读，综合得分 107。
 
 这次挑中的是「草莓小物」。它更适合写成一条轻松的新品分享，重点放在第一眼的心动感。
 
@@ -74,12 +74,14 @@
 
 ## 10. Image Plan
 
-- Hero image: https://curlycollection.jp/shop/upload/save_image/0411125422_69d9c5ee26061.JPG
+- Hero image: https://curlycollection.jp/shop/upload/save_image/0411123428_69d9c1449bb8a.JPG
 - Layout:
   首图用单张大图做轻改背景，正文配图优先 2-4 张细节图，整体做 1 张封面 + 2-3 张补充图。
+- Cover template: sticker-frame
+- Cover palette: strawberry-milk
 
 - Detail images:
-- https://curlycollection.jp/shop/upload/save_image/0411125422_69d9c5ee30120.JPG
+- https://curlycollection.jp/shop/upload/save_image/0411123428_69d9c144a2866.JPG
 - https://curlycollection.jp/shop/upload/save_image/1101101611_67242bdb5a040.jpeg
 - https://curlycollection.jp/shop/upload/save_image/0318103403_69ba010b2d23b.png
 - Editing notes:
@@ -89,4 +91,7 @@
 
 ## 11. Local Assets
 
-- 本次未下载图片
+- primary.jpg
+- detail-2.jpg
+- detail-3.jpeg
+- detail-4.png
