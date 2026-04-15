@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xiaohongshu Safe Ops"
+  short_description: "Safer Xiaohongshu planning and draft generation"
+  default_prompt: "Use this skill to turn a topic into a Xiaohongshu content pack with angles, titles, draft copy, cover text, tags, comment seeds, and a manual review checklist."

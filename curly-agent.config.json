@@ -1,0 +1,10 @@
+{
+  "homepage_url": "https://curlycollection.jp/",
+  "output_root": "runs",
+  "db_path": "curly-agent.sqlite3",
+  "site_output": "site",
+  "language": "zh-CN",
+  "voice": "female-friendly-light-share",
+  "download_images": true,
+  "allow_fallback": true
+}

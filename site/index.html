@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Curly Collection 内容库存</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Curly Collection</p>
+        <h1>内容库存页</h1>
+        <p class="hero-copy">这里专门给你和你老婆挑题、看图、看正文。每次本地 run 完以后，新的内容会被整理进这个静态页面里，后面直接发到 GitHub Pages 就能随时随地打开。</p>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <span class="meta-label">当前库存</span>
+          <strong id="itemCount">加载中</strong>
+          <span class="meta-footnote">展示图片素材 + content-pack 正文</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <input id="searchInput" class="search-input" type="search" placeholder="搜标题、正文关键词、标签">
+      <div class="filter-row">
+        <button class="filter-chip is-active" data-filter="all">全部</button>
+        <button class="filter-chip" data-filter="新品速递">新品速递</button>
+        <button class="filter-chip" data-filter="旧款回看">旧款回看</button>
+      </div>
+    </section>
+
+    <section id="cards" class="cards"></section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
