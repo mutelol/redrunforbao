@@ -98,6 +98,28 @@ site/
 
 如果你还没初始化 Git，它会直接提示你下一步该怎么做。
 
+## 腾讯云 CloudBase
+
+如果给国内手机访问，推荐用腾讯云 CloudBase 静态网站托管。CloudBase 官方 CLI 支持扫码登录和静态网站上传，本项目已经准备了两个脚本：
+
+```powershell
+.\setup-tencent-cloudbase.bat
+.\deploy-tencent-cloudbase.bat
+```
+
+第一次使用：
+
+1. 先在腾讯云 CloudBase 控制台创建或打开一个环境，并确认开启“静态网站托管”。
+2. 双击 `setup-tencent-cloudbase.bat`，它会安装 `@cloudbase/cli` 并引导你扫码登录。
+3. 双击 `deploy-tencent-cloudbase.bat`，第一次会让你输入 CloudBase 环境 ID，之后会保存到本机 `.cloudbase-env`。
+
+以后每次更新：
+
+1. 双击 `run-curly-agent.bat` 生成新内容和本地图片。
+2. 双击 `deploy-tencent-cloudbase.bat` 上传最新 `site/`。
+
+`.cloudbase-env` 只保存在本机，已经加入 `.gitignore`，不会提交到 GitHub。
+
 ## 测试
 
 ```powershell
