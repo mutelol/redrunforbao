@@ -1,0 +1,9 @@
+{
+  "name": "redrunforbao-curly-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build helper for deploying the generated Curly Collection static site to Tencent CloudBase.",
+  "scripts": {
+    "build": "node scripts/build-cloudbase-site.js"
+  }
+}

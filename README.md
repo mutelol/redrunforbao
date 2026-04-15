@@ -120,6 +120,26 @@ site/
 
 `.cloudbase-env` 只保存在本机，已经加入 `.gitignore`，不会提交到 GitHub。
 
+也可以用 CloudBase 控制台里的“Git 仓库部署”。本项目已经提供了 `package.json`，腾讯云构建时执行 `npm run build` 会把 `site/` 复制到 `dist/`，方便直接部署。
+
+推荐配置：
+
+```text
+项目名称: redrunforbao
+Git 仓库: mutelol/redrunforbao
+仓库分支: main
+项目框架: 其他 / 静态网站 / 自定义
+Node.js 版本: Node.js 18 或更高
+目标目录: ./
+安装命令: npm install
+构建命令: npm run build
+构建产物目录: ./dist
+部署路径: /
+环境 ID: yiyi-4gbur6ug4a76915a
+```
+
+注意：Git 仓库部署只会部署 GitHub 仓库里已经提交并推送的 `site/`。你本地新跑出内容后，仍然需要先把更新推到 GitHub，CloudBase 才能拉到最新内容。
+
 ## 测试
 
 ```powershell

@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 curly-agent.sqlite3
 .cloudbase-env
+dist/
