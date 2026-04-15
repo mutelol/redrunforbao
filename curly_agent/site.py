@@ -150,10 +150,7 @@ def _site_rel(site_root: Path, path: Path) -> str:
 
 def _detail_html(site_root: Path, detail_path: Path, record: dict[str, object]) -> str:
     gallery_urls = record.get("gallery_urls") or []
-    gallery_html = "".join(
-        f'<img class="detail-image" src="{html.escape(_from_page(detail_path, site_root / str(path)))}" alt="">'
-        for path in gallery_urls
-    )
+    gallery_html = _gallery_html(site_root, detail_path, gallery_urls)
     tags_html = "".join(
         f'<span class="tag">#{html.escape(str(tag))}</span>'
         for tag in (record.get("tags") or [])
@@ -224,6 +221,41 @@ def _detail_html(site_root: Path, detail_path: Path, record: dict[str, object]) 
 
 def _from_page(page_path: Path, target_path: Path) -> str:
     return Path(os.path.relpath(target_path, start=page_path.parent)).as_posix()
+
+
+def _gallery_html(site_root: Path, detail_path: Path, gallery_urls: object) -> str:
+    if not isinstance(gallery_urls, list):
+        return ""
+
+    cards: list[str] = []
+    for index, path in enumerate(gallery_urls, start=1):
+        image_path = site_root / str(path)
+        image_href = html.escape(_from_page(detail_path, image_path))
+        image_name = html.escape(_download_name(index, image_path))
+        cards.append(
+            f"""
+            <figure class="image-card">
+              <a class="image-open-link" href="{image_href}" target="_blank" rel="noreferrer">
+                <img class="detail-image" src="{image_href}" alt="图片素材 {index}">
+              </a>
+              <figcaption class="image-caption">
+                <span>图片 {index}</span>
+                <span class="image-actions">
+                  <a href="{image_href}" target="_blank" rel="noreferrer">打开原图</a>
+                  <a href="{image_href}" download="{image_name}">下载图片</a>
+                </span>
+              </figcaption>
+            </figure>
+            """
+        )
+    return "".join(cards)
+
+
+def _download_name(index: int, image_path: Path) -> str:
+    suffix = image_path.suffix or ".jpg"
+    if image_path.name.lower() == "cover.svg":
+        return f"curly-cover-{index}{suffix}"
+    return f"curly-image-{index}{suffix}"
 
 
 def _render_markdown(markdown_text: str) -> str:
@@ -677,10 +709,46 @@ h1 {
 
 .detail-image {
   width: 100%;
+  display: block;
   border-radius: 22px;
   background: linear-gradient(180deg, #f7dbe3 0%, #f7efe2 100%);
   border: 1px solid var(--line);
   box-shadow: 0 14px 32px rgba(78, 49, 34, 0.10);
+}
+
+.image-card {
+  margin: 0;
+}
+
+.image-open-link {
+  display: block;
+  text-decoration: none;
+}
+
+.image-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255, 253, 250, 0.84);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.image-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.image-actions a {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .markdown-body {

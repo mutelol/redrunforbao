@@ -316,10 +316,46 @@ h1 {
 
 .detail-image {
   width: 100%;
+  display: block;
   border-radius: 22px;
   background: linear-gradient(180deg, #f7dbe3 0%, #f7efe2 100%);
   border: 1px solid var(--line);
   box-shadow: 0 14px 32px rgba(78, 49, 34, 0.10);
+}
+
+.image-card {
+  margin: 0;
+}
+
+.image-open-link {
+  display: block;
+  text-decoration: none;
+}
+
+.image-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255, 253, 250, 0.84);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.image-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.image-actions a {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .markdown-body {
